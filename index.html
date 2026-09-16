@@ -1,0 +1,1537 @@
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>SHASHI Customer Care</title>
+
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background: #f7f6f3;
+    color: #171717;
+}
+
+/* NAVIGATION */
+
+nav {
+    height: 72px;
+    background: #ffffff;
+    border-bottom: 1px solid #e5e5e5;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 7%;
+}
+
+.logo {
+    font-size: 25px;
+    letter-spacing: 7px;
+    font-weight: 500;
+}
+
+.nav-right {
+    font-size: 12px;
+    letter-spacing: 2px;
+    color: #777;
+}
+
+/* HERO */
+
+.hero {
+    text-align: center;
+    padding: 70px 20px 40px;
+}
+
+.hero small {
+    letter-spacing: 3px;
+    color: #777;
+    font-size: 11px;
+}
+
+.hero h1 {
+    font-family: Georgia, serif;
+    font-size: clamp(40px, 7vw, 72px);
+    font-weight: 400;
+    margin: 15px 0;
+}
+
+.hero p {
+    max-width: 600px;
+    margin: auto;
+    color: #666;
+    line-height: 1.7;
+    font-size: 15px;
+}
+
+/* MAIN */
+
+.container {
+    max-width: 1050px;
+    margin: auto;
+    padding: 20px;
+}
+
+.support-box {
+    background: white;
+    border: 1px solid #dedede;
+    border-radius: 18px;
+    overflow: hidden;
+    box-shadow: 0 15px 50px rgba(0,0,0,0.05);
+}
+
+/* ASSISTANT HEADER */
+
+.assistant-header {
+    background: #171717;
+    color: white;
+    padding: 25px 30px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.assistant-title {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.ai-icon {
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+    background: white;
+    color: #171717;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+}
+
+.assistant-title h2 {
+    font-size: 16px;
+    font-weight: 500;
+}
+
+.assistant-title span {
+    font-size: 11px;
+    color: #aaa;
+    display: block;
+    margin-top: 5px;
+}
+
+.status {
+    font-size: 11px;
+    color: #b9f6ca;
+}
+
+/* CHAT */
+
+.chat-area {
+    height: 470px;
+    padding: 25px;
+    overflow-y: auto;
+    background: #fafafa;
+}
+
+.message {
+    display: flex;
+    margin-bottom: 18px;
+}
+
+.message.bot {
+    justify-content: flex-start;
+}
+
+.message.user {
+    justify-content: flex-end;
+}
+
+.bubble {
+    max-width: 75%;
+    padding: 14px 17px;
+    border-radius: 15px;
+    font-size: 14px;
+    line-height: 1.6;
+}
+
+.bot .bubble {
+    background: white;
+    border: 1px solid #e3e3e3;
+    border-bottom-left-radius: 4px;
+}
+
+.user .bubble {
+    background: #171717;
+    color: white;
+    border-bottom-right-radius: 4px;
+}
+
+/* QUICK ACTIONS */
+
+.quick-actions {
+    padding: 20px 25px;
+    border-top: 1px solid #e5e5e5;
+    background: white;
+}
+
+.quick-actions p {
+    font-size: 11px;
+    color: #888;
+    margin-bottom: 12px;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+}
+
+.buttons {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+}
+
+.quick-btn {
+    border: 1px solid #d7d7d7;
+    background: white;
+    padding: 10px 14px;
+    border-radius: 30px;
+    cursor: pointer;
+    font-size: 12px;
+    transition: 0.2s;
+}
+
+.quick-btn:hover {
+    background: #171717;
+    color: white;
+}
+
+/* INPUT */
+
+.input-area {
+    display: flex;
+    gap: 10px;
+    padding: 18px 25px 25px;
+    background: white;
+}
+
+.input-area input {
+    flex: 1;
+    border: 1px solid #d5d5d5;
+    border-radius: 30px;
+    padding: 14px 18px;
+    outline: none;
+    font-size: 14px;
+}
+
+.input-area input:focus {
+    border-color: #171717;
+}
+
+.send-btn {
+    width: 50px;
+    height: 50px;
+    border: none;
+    border-radius: 50%;
+    background: #171717;
+    color: white;
+    cursor: pointer;
+    font-size: 18px;
+}
+
+.send-btn:hover {
+    opacity: 0.8;
+}
+
+/* INFO CARDS */
+
+.info-section {
+    margin-top: 40px;
+}
+
+.info-section h2 {
+    text-align: center;
+    font-family: Georgia, serif;
+    font-weight: 400;
+    font-size: 32px;
+    margin-bottom: 25px;
+}
+
+.cards {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 15px;
+}
+
+.card {
+    background: white;
+    padding: 25px;
+    border: 1px solid #e2e2e2;
+    border-radius: 14px;
+}
+
+.card-icon {
+    font-size: 24px;
+    margin-bottom: 15px;
+}
+
+.card h3 {
+    font-size: 15px;
+    margin-bottom: 8px;
+}
+
+.card p {
+    font-size: 13px;
+    color: #777;
+    line-height: 1.6;
+}
+
+/* HUMAN SUPPORT */
+
+.human-support {
+    margin-top: 40px;
+    background: #171717;
+    color: white;
+    border-radius: 15px;
+    padding: 35px;
+    text-align: center;
+}
+
+.human-support h2 {
+    font-family: Georgia, serif;
+    font-weight: 400;
+    margin-bottom: 10px;
+}
+
+.human-support p {
+    color: #bbb;
+    font-size: 13px;
+    line-height: 1.6;
+    max-width: 500px;
+    margin: auto;
+}
+
+.support-btn {
+    display: inline-block;
+    margin-top: 20px;
+    background: white;
+    color: #171717;
+    padding: 12px 20px;
+    border-radius: 30px;
+    text-decoration: none;
+    font-size: 12px;
+}
+
+/* FOOTER */
+
+footer {
+    text-align: center;
+    padding: 45px 20px;
+    color: #888;
+    font-size: 11px;
+    letter-spacing: 1px;
+}
+
+/* MOBILE */
+
+@media (max-width: 700px) {
+
+    nav {
+        padding: 0 20px;
+    }
+
+    .nav-right {
+        display: none;
+    }
+
+    .hero {
+        padding-top: 50px;
+    }
+
+    .chat-area {
+        height: 500px;
+    }
+
+    .bubble {
+        max-width: 88%;
+    }
+
+    .cards {
+        grid-template-columns: 1fr;
+    }
+
+    .assistant-header {
+        padding: 20px;
+    }
+
+    .quick-actions,
+    .input-area,
+    .chat-area {
+        padding-left: 15px;
+        padding-right: 15px;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<!-- NAVIGATION -->
+
+<nav>
+
+    <div class="logo">
+        SHASHI
+    </div>
+
+    <div class="nav-right">
+        CUSTOMER CARE
+    </div>
+
+</nav>
+
+
+<!-- HERO -->
+
+<section class="hero">
+
+    <small>SHASHI CUSTOMER EXPERIENCE</small>
+
+    <h1>We're here to help.</h1>
+
+    <p>
+        Get quick answers about your order, shipping, returns,
+        exchanges, sizing and more.
+    </p>
+
+</section>
+
+
+<!-- MAIN -->
+
+<div class="container">
+
+    <div class="support-box">
+
+        <!-- ASSISTANT HEADER -->
+
+        <div class="assistant-header">
+
+            <div class="assistant-title">
+
+                <div class="ai-icon">
+                    AI
+                </div>
+
+                <div>
+
+                    <h2>
+                        SHASHI Support Assistant
+                    </h2>
+
+                    <span>
+                        AI Support Assistant — Prototype
+                    </span>
+
+                </div>
+
+            </div>
+
+            <div class="status">
+                ● Online
+            </div>
+
+        </div>
+
+
+        <!-- CHAT -->
+
+        <div class="chat-area" id="chatArea">
+
+            <div class="message bot">
+
+                <div class="bubble">
+
+                    Hi 👋 I'm the SHASHI Support Assistant.
+
+                    <br><br>
+
+                    I can help you with orders, shipping,
+                    returns, exchanges, sizing and general questions.
+
+                    <br><br>
+
+                    What can I help you with?
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <!-- QUICK ACTIONS -->
+
+        <div class="quick-actions">
+
+            <p>Quick help</p>
+
+            <div class="buttons">
+
+                <button class="quick-btn"
+                onclick="quickQuestion('Where is my order?')">
+                    📦 Track My Order
+                </button>
+
+                <button class="quick-btn"
+                onclick="quickQuestion('Can I return my order?')">
+                    ↩️ Returns
+                </button>
+
+                <button class="quick-btn"
+                onclick="quickQuestion('Can I exchange my item?')">
+                    🔄 Exchange
+                </button>
+
+                <button class="quick-btn"
+                onclick="quickQuestion('How long does shipping take?')">
+                    🚚 Shipping
+                </button>
+
+                <button class="quick-btn"
+                onclick="quickQuestion('I need help with sizing')">
+                    📏 Find My Size
+                </button>
+
+                <button class="quick-btn"
+                onclick="quickQuestion('I want to speak to customer support')">
+                    👤 Human Support
+                </button>
+
+            </div>
+
+        </div>
+
+
+        <!-- INPUT -->
+
+        <div class="input-area">
+
+            <input
+                type="text"
+                id="userInput"
+                placeholder="Ask me anything..."
+                onkeydown="handleEnter(event)"
+            >
+
+            <button
+                class="send-btn"
+                onclick="sendMessage()"
+            >
+                ↑
+            </button>
+
+        </div>
+
+    </div>
+
+
+    <!-- INFORMATION CARDS -->
+
+    <section class="info-section">
+
+        <h2>Support, simplified.</h2>
+
+        <div class="cards">
+
+            <div class="card">
+
+                <div class="card-icon">
+                    📦
+                </div>
+
+                <h3>Order Help</h3>
+
+                <p>
+                    Get information about order processing,
+                    tracking and missing packages.
+                </p>
+
+            </div>
+
+
+            <div class="card">
+
+                <div class="card-icon">
+                    ↩️
+                </div>
+
+                <h3>Returns</h3>
+
+                <p>
+                    Understand return eligibility and
+                    how to begin the return process.
+                </p>
+
+            </div>
+
+
+            <div class="card">
+
+                <div class="card-icon">
+                    📏
+                </div>
+
+                <h3>Sizing Help</h3>
+
+                <p>
+                    Get guidance about finding the right
+                    jewelry size and when to contact support.
+                </p>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- HUMAN SUPPORT -->
+
+    <section class="human-support">
+
+        <h2>Need a human?</h2>
+
+        <p>
+            If the assistant cannot answer your question,
+            you can contact the SHASHI customer support team directly.
+        </p>
+
+        <a
+            class="support-btn"
+            href="mailto:support@shopshashi.com"
+        >
+            Contact Support
+        </a>
+
+    </section>
+
+</div>
+
+
+<!-- FOOTER -->
+
+<footer>
+
+    SHASHI CUSTOMER CARE · SUPPORT ASSISTANT PROTOTYPE
+
+    <br><br>
+
+    This prototype is not connected to SHASHI's live
+    order or customer databases.
+
+</footer>
+
+
+
+<script>
+
+/* =========================================
+   CHAT FUNCTIONS
+========================================= */
+
+const chatArea = document.getElementById("chatArea");
+
+const userInput = document.getElementById("userInput");
+
+
+function addMessage(text, sender) {
+
+    const message = document.createElement("div");
+
+    message.className = "message " + sender;
+
+    const bubble = document.createElement("div");
+
+    bubble.className = "bubble";
+
+    bubble.innerHTML = text;
+
+    message.appendChild(bubble);
+
+    chatArea.appendChild(message);
+
+    chatArea.scrollTop = chatArea.scrollHeight;
+}
+
+
+/* =========================================
+   SEND MESSAGE
+========================================= */
+
+function sendMessage() {
+
+    const text = userInput.value.trim();
+
+    if (text === "") {
+        return;
+    }
+
+    addMessage(text, "user");
+
+    userInput.value = "";
+
+    setTimeout(function() {
+
+        const response = getResponse(text);
+
+        addMessage(response, "bot");
+
+    }, 500);
+
+}
+
+
+/* =========================================
+   QUICK QUESTION
+========================================= */
+
+function quickQuestion(question) {
+
+    addMessage(question, "user");
+
+    setTimeout(function() {
+
+        const response = getResponse(question);
+
+        addMessage(response, "bot");
+
+    }, 500);
+
+}
+
+
+/* =========================================
+   ENTER KEY
+========================================= */
+
+function handleEnter(event) {
+
+    if (event.key === "Enter") {
+
+        sendMessage();
+
+    }
+
+}
+
+
+/* =========================================
+   SUPPORT KNOWLEDGE BASE
+========================================= */
+
+function getResponse(question) {
+
+    const q = question.toLowerCase();
+
+
+    /* ORDER TRACKING */
+
+    if (
+        q.includes("where is my order") ||
+        q.includes("track my order") ||
+        q.includes("tracking") ||
+        q.includes("order status") ||
+        q.includes("my package")
+    ) {
+
+        return `
+        <strong>Order tracking 📦</strong>
+        <br><br>
+
+        SHASHI orders generally require processing before
+        shipment. Once your order ships, tracking information
+        is sent by email.
+
+        <br><br>
+
+        This prototype cannot access live SHASHI orders yet.
+
+        <br><br>
+
+        <strong>Future version:</strong>
+        customers could enter their order number here
+        and receive live order information.
+        `;
+
+    }
+
+
+    /* SHIPPING */
+
+    if (
+        q.includes("shipping") ||
+        q.includes("delivery") ||
+        q.includes("how long")
+    ) {
+
+        return `
+        <strong>Shipping information 🚚</strong>
+        <br><br>
+
+        Orders generally require processing before shipment.
+
+        <br><br>
+
+        <strong>US shipping:</strong><br>
+        Standard Ground: approximately 5–7 business days<br>
+        Expedited: approximately 2–4 business days<br>
+        Next Day: approximately 1 business day
+
+        <br><br>
+
+        <strong>International:</strong><br>
+        Worldwide Express is generally 5–7 business days.
+
+        <br><br>
+
+        Processing time is separate from shipping time.
+        `;
+
+    }
+
+
+    /* RETURNS */
+
+    if (
+        q.includes("return") ||
+        q.includes("refund")
+    ) {
+
+        return `
+        <strong>Returns ↩️</strong>
+        <br><br>
+
+        Full-priced items may generally be returned within
+        14 days of delivery, subject to SHASHI's return
+        requirements.
+
+        <br><br>
+
+        Sale items are final sale.
+
+        <br><br>
+
+        To begin a return, customers can contact
+        SHASHI customer support for return instructions.
+
+        <br><br>
+
+        📧 support@shopshashi.com
+        `;
+
+    }
+
+
+    /* EXCHANGE */
+
+    if (
+        q.includes("exchange") ||
+        q.includes("change size") ||
+        q.includes("different size")
+    ) {
+
+        return `
+        <strong>Exchanges 🔄</strong>
+        <br><br>
+
+        SHASHI does not currently offer a formal exchange
+        process.
+
+        <br><br>
+
+        The usual process is to return the eligible item
+        and place a new order for the desired size or style.
+
+        <br><br>
+
+        If you're unsure what to do, I can connect you
+        with customer support.
+        `;
+
+    }
+
+
+    /* SIZING */
+
+    if (
+        q.includes("size") ||
+        q.includes("sizing") ||
+        q.includes("fit") ||
+        q.includes("ring size")
+    ) {
+
+        return `
+        <strong>Sizing help 📏</strong>
+        <br><br>
+
+        I can help point you in the right direction,
+        but this prototype does not yet have a live
+        SHASHI sizing recommendation system.
+
+        <br><br>
+
+        For specific sizing assistance, customers can
+        contact SHASHI support.
+
+        <br><br>
+
+        📧 support@shopshashi.com
+
+        <br><br>
+
+        <strong>Future version:</strong>
+        customers could answer a few questions and receive
+        product-specific sizing guidance.
+        `;
+
+    }
+
+
+    /* INTERNATIONAL */
+
+    if (
+        q.includes("international") ||
+        q.includes("outside") ||
+        q.includes("customs") ||
+        q.includes("duty") ||
+        q.includes("tax")
+    ) {
+
+        return `
+        <strong>International orders 🌎</strong>
+        <br><br>
+
+        SHASHI ships internationally.
+
+        <br><br>
+
+        International customers may be responsible for
+        applicable duties, taxes and return-related costs.
+
+        <br><br>
+
+        Because international requirements can vary,
+        contacting customer support is recommended for
+        order-specific questions.
+
+        <br><br>
+
+        📧 support@shopshashi.com
+        `;
+
+    }
+
+
+    /* DAMAGED ITEM */
+
+    if (
+        q.includes("damaged") ||
+        q.includes("broken") ||
+        q.includes("faulty")
+    ) {
+
+        return `
+        <strong>Damaged or faulty item</strong>
+        <br><br>
+
+        If your item arrived damaged or you believe there
+        is a product issue, please contact SHASHI customer
+        support with your order information.
+
+        <br><br>
+
+        📧 support@shopshashi.com
+
+        <br><br>
+
+        A human support representative can review
+        the specific situation.
+        `;
+
+    }
+
+
+    /* CUSTOMER SERVICE */
+
+    if (
+        q.includes("human") ||
+        q.includes("agent") ||
+        q.includes("customer service") ||
+        q.includes("customer support") ||
+        q.includes("speak to someone") ||
+        q.includes("contact")
+    ) {
+
+        return `
+        <strong>Contact SHASHI support 👤</strong>
+        <br><br>
+
+        Email:
+        <strong>support@shopshashi.com</strong>
+
+        <br><br>
+
+        Customer service hours are generally
+        Monday–Friday, 9 AM–6 PM EST.
+
+        <br><br>
+
+        You can also use the
+        <a href="mailto:support@shopshashi.com">
+        Contact Support
+        </a>
+        button below.
+        `;
+
+    }
+
+
+    /* ORDER PROCESSING */
+
+    if (
+        q.includes("processing") ||
+        q.includes("how long before") ||
+        q.includes("when will my order ship")
+    ) {
+
+        return `
+        <strong>Order processing 📦</strong>
+        <br><br>
+
+        Orders generally require a processing period before
+        they are shipped.
+
+        <br><br>
+
+        Processing and shipping are separate stages.
+
+        <br><br>
+
+        Once your order ships, tracking information
+        is sent by email.
+        `;
+
+    }
+
+
+    /* GENERAL HELP */
+
+    if (
+        q.includes("hello") ||
+        q.includes("hi") ||
+        q.includes("hey")
+    ) {
+
+        return `
+        Hello 👋
+
+        <br><br>
+
+        How can I help you today?
+
+        <br><br>
+
+        You can ask me about:
+        <br>
+        • Orders
+        <br>
+        • Shipping
+        <br>
+        • Returns
+        <br>
+        • Exchanges
+        <br>
+        • Sizing
+        <br>
+        • Customer support
+        `;
+
+    }
+
+
+    /* DEFAULT RESPONSE */
+
+    return `
+    I'm not completely sure about that yet.
+
+    <br><br>
+
+    I can currently help with:
+
+    <br><br>
+
+    📦 Order tracking
+    <br>
+    🚚 Shipping
+    <br>
+    ↩️ Returns
+    <br>
+    🔄 Exchanges
+    <br>
+    📏 Sizing
+    <br>
+    👤 Customer support
+
+    <br><br>
+
+    If your question is specific or account-related,
+    you can contact SHASHI support directly:
+
+    <br><br>
+
+    <strong>support@shopshashi.com</strong>
+    `;
+
+}
+
+</script>
+<!-- SHASHI AI CHAT BUBBLE -->
+<button id="aiBubble" class="ai-bubble" onclick="toggleAIChat()">
+    💬
+</button>
+
+<div id="aiChatWindow" class="ai-chat-window">
+
+    <div class="ai-chat-header">
+        <div>
+            <strong>SHASHI AI Assistant</strong>
+            <span>● Online</span>
+        </div>
+
+        <button onclick="toggleAIChat()" class="close-ai">
+            ×
+        </button>
+    </div>
+
+    <div class="ai-chat-body">
+
+        <div class="ai-message">
+            Hi 👋 I'm the SHASHI Support Assistant.
+            <br><br>
+            How can I help you today?
+        </div>
+
+        <div class="ai-options">
+
+            <button onclick="sendAIQuestion('How long does shipping take?')">
+                📦 Shipping
+            </button>
+
+            <button onclick="sendAIQuestion('I want to return my order')">
+                ↩️ Returns
+            </button>
+
+            <button onclick="sendAIQuestion('How do exchanges work?')">
+                🔄 Exchanges
+            </button>
+
+            <button onclick="sendAIQuestion('I need help choosing my size')">
+                📏 Find My Size
+            </button>
+
+        </div>
+
+        <div id="aiMessages"></div>
+
+    </div>
+
+    <div class="ai-input-area">
+
+        <input
+            type="text"
+            id="aiInput"
+            placeholder="Ask SHASHI anything..."
+            onkeydown="if(event.key==='Enter') sendAIMessage()"
+        >
+
+        <button onclick="sendAIMessage()">
+            ➤
+        </button>
+
+    </div>
+
+</div>
+
+<style>
+
+.ai-bubble {
+    position: fixed;
+    right: 25px;
+    bottom: 25px;
+
+    width: 62px;
+    height: 62px;
+
+    border-radius: 50%;
+    border: none;
+
+    background: #111;
+    color: white;
+
+    font-size: 25px;
+
+    cursor: pointer;
+
+    box-shadow: 0 8px 25px rgba(0,0,0,0.25);
+
+    z-index: 9999;
+
+    transition: 0.2s;
+}
+
+.ai-bubble:hover {
+    transform: scale(1.08);
+}
+
+
+.ai-chat-window {
+
+    display: none;
+
+    position: fixed;
+
+    right: 25px;
+    bottom: 100px;
+
+    width: 360px;
+    max-width: calc(100vw - 30px);
+
+    height: 520px;
+
+    background: white;
+
+    border-radius: 18px;
+
+    box-shadow: 0 15px 50px rgba(0,0,0,0.25);
+
+    overflow: hidden;
+
+    z-index: 9998;
+
+    border: 1px solid #ddd;
+}
+
+
+.ai-chat-header {
+
+    background: #111;
+
+    color: white;
+
+    padding: 18px;
+
+    display: flex;
+
+    justify-content: space-between;
+
+    align-items: center;
+}
+
+.ai-chat-header strong {
+    display: block;
+    font-size: 15px;
+}
+
+.ai-chat-header span {
+    font-size: 11px;
+    color: #98FBCB;
+}
+
+.close-ai {
+
+    background: transparent;
+
+    border: none;
+
+    color: white;
+
+    font-size: 25px;
+
+    cursor: pointer;
+}
+
+
+.ai-chat-body {
+
+    height: 390px;
+
+    padding: 15px;
+
+    overflow-y: auto;
+
+    background: #fafafa;
+}
+
+
+.ai-message {
+
+    background: white;
+
+    padding: 13px;
+
+    border-radius: 12px;
+
+    margin-bottom: 15px;
+
+    font-size: 14px;
+
+    line-height: 1.5;
+
+    border: 1px solid #eee;
+}
+
+
+.ai-options {
+
+    display: grid;
+
+    gap: 8px;
+
+    margin-bottom: 15px;
+}
+
+
+.ai-options button {
+
+    padding: 11px;
+
+    background: white;
+
+    border: 1px solid #ddd;
+
+    border-radius: 10px;
+
+    text-align: left;
+
+    cursor: pointer;
+
+    font-size: 13px;
+}
+
+.ai-options button:hover {
+
+    background: #f2f2f2;
+}
+
+
+.user-ai-message {
+
+    background: #111;
+
+    color: white;
+
+    padding: 10px 13px;
+
+    border-radius: 12px;
+
+    margin: 8px 0 8px auto;
+
+    max-width: 80%;
+
+    font-size: 13px;
+}
+
+
+.bot-ai-message {
+
+    background: white;
+
+    color: #111;
+
+    padding: 10px 13px;
+
+    border-radius: 12px;
+
+    margin: 8px auto 8px 0;
+
+    max-width: 85%;
+
+    font-size: 13px;
+
+    border: 1px solid #eee;
+}
+
+
+.ai-input-area {
+
+    display: flex;
+
+    padding: 10px;
+
+    border-top: 1px solid #ddd;
+
+    background: white;
+}
+
+
+.ai-input-area input {
+
+    flex: 1;
+
+    border: 1px solid #ddd;
+
+    border-radius: 10px;
+
+    padding: 12px;
+
+    outline: none;
+
+    font-size: 13px;
+}
+
+
+.ai-input-area button {
+
+    width: 45px;
+
+    margin-left: 7px;
+
+    border: none;
+
+    border-radius: 10px;
+
+    background: #111;
+
+    color: white;
+
+    cursor: pointer;
+}
+
+
+@media(max-width:500px) {
+
+    .ai-chat-window {
+
+        right: 10px;
+
+        bottom: 85px;
+
+        width: calc(100vw - 20px);
+
+        height: 75vh;
+    }
+
+    .ai-bubble {
+
+        right: 18px;
+
+        bottom: 18px;
+    }
+}
+
+</style>
+
+
+<script>
+
+function toggleAIChat() {
+
+    const chat = document.getElementById("aiChatWindow");
+
+    if (chat.style.display === "block") {
+
+        chat.style.display = "none";
+
+    } else {
+
+        chat.style.display = "block";
+
+    }
+
+}
+
+
+async function sendAIQuestion(question) {
+    const messages = document.getElementById("aiMessages");
+
+    // Show customer's message
+    messages.innerHTML += `
+        <div class="user-ai-message">
+            ${question}
+        </div>
+    `;
+
+    messages.scrollTop = messages.scrollHeight;
+
+    // Show temporary loading message
+    const loading = document.createElement("div");
+    loading.className = "bot-ai-message";
+    loading.textContent = "SHASHI AI is typing...";
+    messages.appendChild(loading);
+
+    try {
+        const response = await fetch("/api/chat", {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify({
+                message: question
+            })
+        });
+
+        const data = await response.json();
+
+        loading.remove();
+
+        if (!response.ok) {
+            throw new Error(data.error || "AI request failed");
+        }
+
+        messages.innerHTML += `
+            <div class="bot-ai-message">
+                ${data.reply}
+            </div>
+        `;
+
+    } catch (error) {
+
+        loading.remove();
+
+        messages.innerHTML += `
+            <div class="bot-ai-message">
+                Sorry, I'm having trouble connecting right now.
+                Please contact SHASHI support at
+                support@shopshashi.com.
+            </div>
+        `;
+
+        console.error(error);
+    }
+
+    messages.scrollTop = messages.scrollHeight;
+}
+
+
+function sendAIMessage() {
+
+    const input = document.getElementById("aiInput");
+
+    const message = input.value.trim();
+
+    if (!message) return;
+
+    sendAIQuestion(message);
+
+    input.value = "";
+}
+
+</script>
+</body>
+</html>
